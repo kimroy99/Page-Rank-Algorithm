@@ -7,15 +7,18 @@ from matplotlib.pyplot import figure, text
 from itertools import count
 import pagerank as pg
 
-st.markdown("<h1 style='text-align: center; color: black;'>Page Rank Algotithm</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: skyblue;'>Page Rank Algotithm</h1>", unsafe_allow_html=True)
 
 
 edges=[]
 n=st.number_input("Enter the number of nodes",min_value=1,max_value=10,value=1)
 e=st.number_input("Enter the number of edges",min_value=1,value=1)
+st.write("Ex: 1-2,2-3,3-4,4-1")
+st.write("1st edges => 1 2 3 4")
+st.write("2nd edges => 2 3 4 1")
 a=st.text_input("Enter all 1st edges").split()
 b=st.text_input("Enter all 2nd edges").split()
-st.markdown("<h1 style='text-align: center; color: black;'>Choose one</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: skyblue;'>Choose one</h1>", unsafe_allow_html=True)
 
 def pagerank(G,alpha=0.85,personalization=None,max_iter=100, tol=1.0e-6, nstart=None, weight='weight',dangling=None):
     if len(G)==0: return {}
@@ -42,7 +45,7 @@ if st.button("NX page rank"):
             text.set_size(50*list(npg.values())[i])
         st.pyplot(fig)
         st.write(npg)
-        st.markdown("<h1 style='text-align: center; color: black;'>NetworkX Page Rank Algorithm</h1>", unsafe_allow_html=True)
+        st.markdown("<h1 style='text-align: center; color: skyblue;'>NetworkX Page Rank Algorithm</h1>", unsafe_allow_html=True)
 
 if st.button("Page Rank"):
     for i in range(e):
@@ -63,7 +66,7 @@ if st.button("Page Rank"):
         text.set_size(50*list(r.values())[i])
     st.pyplot(fig)
     st.write(r)
-    st.markdown("<h1 style='text-align: center; color: black;'>Page Rank Algorithm from scratch</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; color: skyblue;'>Page Rank Algorithm from scratch</h1>", unsafe_allow_html=True)
 
     
 
